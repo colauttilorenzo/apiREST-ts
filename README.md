@@ -4,8 +4,8 @@ RESTful API using NodeJS, express and Sequelize written in Typescript
 ## Progress
 | Version       | Change Log                              | Relase Date |
 |     :---:     | :---                                    |    :---:    |
-| 1.0.0         | Stable (this version)                   | 2020/01/02  |
-| 1.1.0         | FEATURES/Authentication (branch)        | 2020/02/02  |
+| 1.0.0 ![actual version](https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/check-circle-512.png)        | Stable (this version)                   | 2020/01/02  |
+| 1.1.0 ![to be released](https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/circle-512.png)        | FEATURES/Authentication (branch)        | 2020/02/02  |
 
 ## First steps
 apiREST.ts use NodeJS so you have to install NodeJS on your machine (https://nodejs.org/it/), when your machine is ready you can launch ```npm install``` command (remember to be under a wireless network 'cause it downloads all modules used by the application).
