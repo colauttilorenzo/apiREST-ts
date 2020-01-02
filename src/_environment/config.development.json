@@ -1,0 +1,17 @@
+{
+    "environment": "development",
+    "database": {
+        "name": "test",
+        "auth": {
+            "username": "sa",
+            "password": "Passw0rd"
+        },
+        "server": {
+            "host": "localhost",
+            "dialect": "mssql"
+        }
+    },
+    "port": "3000",
+    "module-api": "/test/${api}/",
+    "base-api": "api"
+}

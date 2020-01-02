@@ -1,0 +1,1 @@
+export enum HttpVerb { GET, POST, PATCH, DELETE }
