@@ -12,7 +12,7 @@ The build process create a new 'dist' directory and it is ran with the command (
 npm run build
 ```
 
-### To execute the code you can use these commands
+### Executing Server
 #### Unix-like Operative Systems (MAC OS, Linux)
 ```
 npm run build:unix-dev    //Development environment: every change is run at realtime
