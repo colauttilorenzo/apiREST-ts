@@ -19,6 +19,12 @@ RESTful API using NodeJS, express and Sequelize written in Typescript
   </tr>
   <tr>
     <td style="text-align: center;">1.1.0</td>
+    <td style="text-align: center;"><img src="https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/check-circle-512.png" width="25" height="22" /></td>
+    <td style="text-align: left;">Adding Selenium Test (with example)</td>
+    <td style="text-align: center;">2020/02/03</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">1.2.0</td>
     <td style="text-align: center;"><img src="https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/circle-512.png" width="25" height="22" /></td>
     <td style="text-align: left;">Completing authentication and adding test page</td>
     <td style="text-align: center;">2020/02/02</td>
