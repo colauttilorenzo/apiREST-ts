@@ -14,7 +14,8 @@
     "run:win-prod": "rd /s /q ./dist/server/config.*.json && copy ./src/config.production.json ./dist/server/ && set NODE_ENV=production node ./dist/server/main.js",
     "build:test": "rm -rf ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:dev",
     "build:win-test": "rd /s /q ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:win-dev",
-    "run:test": "mocha ./dist/test/main.js"
+    "run:test": "mocha ./dist/test/main.js",
+    "start": "npm run build:prod"
   },
   "author": "Colautti Lorenzo <colautti.lorenzo@gmail.com>",
   "license": "ISC",
