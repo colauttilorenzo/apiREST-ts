@@ -65,7 +65,7 @@ export class Server {
         Server.app.use(bodyParser.urlencoded({ extended: true }));
 
         //initialising server
-        const port: string = Server.config.port || process.env.PORT || '8080';
+        const port: string =  process.env.PORT || Server.config.port || '8080';
         Server.app.listen(Number.parseInt(port), async function () {
 
             /*const configLogic: ConfigModelLogic = new ConfigModelLogic();
