@@ -15,7 +15,7 @@
     "build:test": "rm -rf ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:dev",
     "build:win-test": "rd /s /q ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:win-dev",
     "run:test": "mocha ./dist/test/main.js",
-    "start": "npm run build:prod"
+    "start": "npm run build:prod && npm run run:prod"
   },
   "author": "Colautti Lorenzo <colautti.lorenzo@gmail.com>",
   "license": "ISC",
