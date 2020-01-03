@@ -48,6 +48,19 @@ export class Server {
     public static start(): void {
 
         //set body-parser as default
+        Server.app.use(function(req, res, next) {
+            res.header('Access-Control-Allow-Origin', '*');
+            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+            res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+        
+            // intercept OPTIONS method
+            if ('OPTIONS' == req.method) {
+              res.send(200);
+            }
+            else {
+              next();
+            }
+        });
         Server.app.use(bodyParser.json());
         Server.app.use(bodyParser.urlencoded({ extended: true }));
 
