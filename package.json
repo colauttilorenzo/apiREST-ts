@@ -4,16 +4,17 @@
   "description": "RESTful API with Typescript",
   "main": "main.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
-
-    "build:unix-dev": "npm run build && NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/main.ts",
-    "build:win-dev": "npm run build && set NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/main.ts",
-
-    "build:unix-test": "npm run build && rm -rf ./dist/config.json && cp ./src/_environment/config.development.json ./dist/config.json && NODE_ENV=test node ./dist/main.js",
-    "build:unix-prod": "npm run build && rm -rf ./dist/config.json && cp ./src/_environment/config.production.json ./dist/config.json && NODE_ENV=production node ./dist/main.js",
-    
-    "build:win-test": "npm run build && rd /s /q ./dist/config.*.json && copy ./src/config.development.json ./dist/ && set NODE_ENV=test node ./dist/main.js",
-    "build:win-prod": "npm run build && rd /s /q ./dist/config.*.json && copy ./src/config.production.json ./dist/ && set NODE_ENV=production node ./dist/main.js"
+    "build:dev": "rm -rf ./dist/server && tsc && NODE_ENV=development",
+    "run:dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/main.ts",
+    "build:prod": "rm -rf ./dist/server && tsc && NODE_ENV=production",
+    "run:prod": "rm -rf ./dist/server/config.json && cp ./src/_environment/config.production.json ./dist/server/config.json && NODE_ENV=production node ./dist/server/main.js",
+    "build:win-dev": "rm -rf ./dist/server && tsc && set NODE_ENV=development",
+    "run:win-dev": "set NODE_ENV=development ts-node-dev --respawn --transpileOnly ./src/main.ts",
+    "build:win-prod": "rm -rf ./dist/server && tsc && set NODE_ENV=production",
+    "run:win-prod": "rd /s /q ./dist/server/config.*.json && copy ./src/config.production.json ./dist/server/ && set NODE_ENV=production node ./dist/server/main.js",
+    "build:test": "rm -rf ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:dev",
+    "build:win-test": "rd /s /q ./dist/test && tsc ./selenium-test/main.ts --outDir ./dist/test && npm run run:win-dev",
+    "run:test": "mocha ./dist/test/main.js"
   },
   "author": "Colautti Lorenzo <colautti.lorenzo@gmail.com>",
   "license": "ISC",
@@ -29,6 +30,19 @@
     "sequelize": "^5.21.3",
     "tedious": "^6.6.2",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "^79.0.0",
+    "faker": "^4.1.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/mocha": "^5.2.7",
+    "@types/selenium-webdriver": "^4.0.6",
+    "selenium-webdriver": "^4.0.0-alpha.5"
   }
 }
