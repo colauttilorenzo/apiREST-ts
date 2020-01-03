@@ -38,22 +38,33 @@ apiREST.ts use NodeJS so you have to install NodeJS on your machine (https://nod
 ## Project building
 apiREST.ts is written in Typescript so it has been builded.
 
-The build process create a new 'dist' directory and it is ran with the command (windows and unix-like)
-```
-npm run build
-```
-
-### Executing Server
 #### Unix-like Operative Systems (MAC OS, Linux)
 ```
-npm run build:unix-dev    //Development environment: every change is run at realtime
-npm run build:unix-test   //TEST environment: the changes don't run at realtime
-npm run build:unix-prod   //PRODUCTION environment: the changes don't run at realtime
+npm run build:dev         //BUILD for DEVELOPMENT environment
+npm run build:prod        //BUILD for PRODUCTION environment
+npm run run:dev           //RUN DEVELOPMENT environment: every change is run at realtime
+npm run run:prod          //RUN PRODUCTION environment: the changes don't run at realtime
 ```
 
 #### Windows Operative Systems
 ```
-npm run build:win-dev    //Development environment: every change is run at realtime
-npm run build:win-test   //TEST environment: the changes don't run at realtime
-npm run build:win-prod   //PRODUCTION environment: the changes don't run at realtime
+npm run build:win-dev         //BUILD for DEVELOPMENT environment
+npm run build:win-prod        //BUILD for PRODUCTION environment
+npm run run:win-dev           //RUN DEVELOPMENT environment: every change is run at realtime
+npm run run:win-prod          //RUN PRODUCTION environment: the changes don't run at realtime
 ```
+
+## Test Project
+Tests are implementated using SELENIUM. They are written in Typescript so the programmer have to buit:
+
+#### Unix-like Operative Systems (MAC OS, Linux)
+```
+npm run build:test
+```
+
+#### Windows Operative Systems
+```
+npm run build:win-test
+```
+
+The command to run the test project is ```run:test```.
