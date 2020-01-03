@@ -38,7 +38,6 @@ apiREST.ts use NodeJS so you have to install NodeJS on your machine (https://nod
 ## Project building
 apiREST.ts is written in Typescript so it has been builded.
 
-### Executing Server
 #### Unix-like Operative Systems (MAC OS, Linux)
 ```
 npm run build:dev         //BUILD for DEVELOPMENT environment
