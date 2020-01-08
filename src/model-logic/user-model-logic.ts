@@ -32,7 +32,7 @@ export class UserModelLogic extends RepositoryBase {
                 sequelize: this.connection,
                 underscored: true,
                 timestamps: false,
-                tableName: 'user'
+                tableName: 'users'
             }
         );
 

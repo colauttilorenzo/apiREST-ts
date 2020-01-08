@@ -3,12 +3,12 @@
     "database": {
         "name": "test",
         "auth": {
-            "username": "sa",
+            "username": "root",
             "password": "Passw0rd"
         },
         "server": {
             "host": "localhost",
-            "dialect": "mssql"
+            "dialect": "mysql"
         }
     },
     "module-api": "${api}/",
