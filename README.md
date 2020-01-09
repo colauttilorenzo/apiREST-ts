@@ -33,10 +33,10 @@ RESTful API using NodeJS, express and Sequelize written in Typescript
 </table>
 
 ## First steps
-apiREST.ts use NodeJS so you have to install NodeJS on your machine (https://nodejs.org/it/), when your machine is ready you can launch ```npm install``` command (remember to be under a wireless network 'cause it downloads all modules used by the application).
+apiREST.ts is built using NodeJS; at the first NodeJS must be installed (https://nodejs.org/it/), if the computer is ready you can launch the command ```npm install``` (this command will install all NodeJS's missing modules so please be careful about your network connection).
 
 ## Project building
-apiREST.ts is written in Typescript so it has been builded.
+In this section I have listed all scripts needed to build apiREST.ts.
 
 #### Unix-like Operative Systems (MAC OS, Linux)
 ```
@@ -55,7 +55,7 @@ npm run run:win-prod          //RUN PRODUCTION environment: the changes don't ru
 ```
 
 ## Test Project
-Tests are implementated using SELENIUM. They are written in Typescript so the programmer have to buit:
+Tests are implementated using SELENIUM:
 
 #### Unix-like Operative Systems (MAC OS, Linux)
 ```
