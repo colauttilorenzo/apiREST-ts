@@ -14,10 +14,20 @@ class Server {
     public dialect?: string;
 }
 
+class Port {
+    public http?: string;
+    public ws?: string;
+}
+
 export class SdkConfig extends Object {
     public database: Database = new Database();
     public moduleApi?: string;
     public baseApi?: string;
-    public port?: string;
+    public port: Port;
     public environment?: string;
+
+    public constructor() {
+        super();
+        this.port = new Port();
+    }
 }

@@ -8,7 +8,7 @@ export class UserService extends ServiceBase {
         super('user');
 
         this.service(this.get, HttpVerb.GET, '/get/:username');
-        this.service(this.getList, HttpVerb.POST, '/get');
+        this.service(this.getList, HttpVerb.GET, '/get');
     }
 
     private getList(req: any, res: any): any {

@@ -11,7 +11,10 @@
             "dialect": "mysql"
         }
     },
-    "port": "3000",
+    "port": {
+        "http": "3000",
+        "ws": "3010"
+    },
     "module-api": "/test/${api}/",
     "base-api": "api"
 }

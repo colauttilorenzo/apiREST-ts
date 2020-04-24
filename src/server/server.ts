@@ -1,4 +1,5 @@
 import express from 'express';
+import http from 'http';
 import bodyParser from 'body-parser';
 import { HttpVerb } from '../base-object/ business-object/_sdk/http-verb';
 import { Config } from './config';
@@ -48,25 +49,27 @@ export class Server {
     public static start(): void {
 
         //set body-parser as default
-        Server.app.use(function(req, res, next) {
+        Server.app.use(function (req, res, next) {
             res.header('Access-Control-Allow-Origin', '*');
             res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
             res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-        
+
             // intercept OPTIONS method
             if ('OPTIONS' == req.method) {
-              res.send(200);
+                res.send(200);
             }
             else {
-              next();
+                next();
             }
         });
         Server.app.use(bodyParser.json());
         Server.app.use(bodyParser.urlencoded({ extended: true }));
 
+        const server = http.createServer(Server.app);
+
         //initialising server
-        const port: string =  process.env.PORT || Server.config.port || '8080';
-        Server.app.listen(Number.parseInt(port), async function () {
+        const httpPort: string = process.env.PORT || Server.config.port.http || '8080';
+        server.listen(Number.parseInt(httpPort), async function () {
 
             /*const configLogic: ConfigModelLogic = new ConfigModelLogic();
             const config = await configLogic.findAll();
@@ -75,7 +78,7 @@ export class Server {
                 console.log('[' + item.id + ']', item.dscr);
             });*/
 
-            console.log('server ready on :' + port + '');
+            console.log('http server ready on: ' + httpPort + '');
             console.log(process.env.NODE_ENV?.toUpperCase());
 
         });

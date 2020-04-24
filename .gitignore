@@ -1,4 +1,3 @@
 sql-versioning/*
 node_modules/*
-dist/server/*
-dist/test/*
+dist

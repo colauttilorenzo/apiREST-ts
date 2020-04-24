@@ -4,7 +4,7 @@ import { BrowserBase } from '../browsers/base/browser-base';
 
 // ---- fake data ------------------------------------------
 const searchInputSelectorClass = 'gLFyf';
-const resultConfirmationSelectorId = 'resultStats';
+const resultConfirmationSelectorId = 'result-stats';
 
 const fakeNameKeyword = 'test';
 // ---------------------------------------------------------
@@ -36,7 +36,16 @@ export class GoogleHomePage extends PageBase {
         await this.sendKeys(searchInput, webdriver.Key.ENTER);
         resultStat = await this.findById(resultConfirmationSelectorId);
         return await this.browser.driver.wait(async function () {
-            return await resultStat.getText();
+            var text = await resultStat.getText();
+            if(typeof text === 'string') {
+                text = text.match(/([0-9]{0,}\.){1,}[0-9]{0,}/gm);
+                if(Array.isArray(text) && text.length > 0) {
+                    text = text[0] ? text[0] : '';
+                    text = parseInt(text.replace(/\./gm, ''));
+                }
+            }
+
+            return text;
         }, 5000);
     }
 

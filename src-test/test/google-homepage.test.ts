@@ -31,7 +31,7 @@ export class GoogleHomePageTest extends TestBase {
             }),
             new Test('write into input element and then search', async function(page: GoogleHomePage) {
                 const result = await page.submitKeywordAndGetResult();
-                expect(result.length).to.be.above(10);
+                expect(result).to.be.above(10);
             })
         ];
 
